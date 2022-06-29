@@ -1,0 +1,105 @@
+html {
+  font-family: sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  max-width: 692px;
+  margin: 0 auto;
+  padding: 20px;
+  line-height: 1.5;
+}
+
+img {
+  width: 100%;
+}
+
+.img-container {
+  width: 450px;
+  margin: 0 auto;
+}
+
+.container {
+  display: grid; /* grid | inline-grid */
+  min-height: 85vh;
+
+  /* grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr .5fr 2fr 1fr; */
+
+  /* con grid-template-areas es posible indicar el nombre y posición concreta de cada área de una cuadrícula. */
+  
+  /* grid-template-areas:
+  Indica la disposición de las áreas en el grid. Cada texto entre comillas simboliza una fila.
+  */
+  grid-template-areas: 
+  "header header header header" 
+  "nav nav nav nav" 
+  "asidet main main asideb"
+  "footer footer footer footer";
+  /*
+  - La palabra clave none: Indica que no se colocará ninguna celda en esta posición.
+  
+  - Uno o más puntos (.): Indica que se colocará una celda vacía en esta posición.
+  */
+}
+
+.header,
+.nav,
+.aside-top,
+.main,
+.aside-bottom,
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .header {
+  /* grid-column: 1 / span 4; */
+  background-color: lightcyan;
+
+  /* grid-area: 
+  Indica el nombre del área. Se usa sobre ítems hijos del grid.
+  */
+  grid-area: header;
+}
+
+.container .nav {
+  /* grid-column: 1 / span 4; */
+  background-color: lightgreen;
+
+  grid-area: nav;
+}
+
+.container .aside-top {
+  /* grid-column: 1 / span 1; */
+  background-color: lightgray;
+
+  grid-area: asidet;
+}
+
+.container .main {
+  /* grid-column: 2 / span 2; */
+  background-color: lightgoldenrodyellow;
+
+  grid-area: main;
+}
+
+.container .aside-bottom {
+  /* grid-column: 4 / span 1; */
+  background-color: lightsteelblue;
+
+  grid-area: asideb;
+}
+
+.container .footer {
+  /* grid-column: 1 / span 4; */
+  background-color: lightskyblue;
+
+  grid-area: footer;
+}
