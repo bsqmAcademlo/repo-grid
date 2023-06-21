@@ -48,6 +48,12 @@ main > img {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	cursor: pointer;
+	transition: transform 0.5s;
+}
+
+.container_table > div:hover {
+	transform: scale(1.1);
 }
 
 @media (max-width: 600px) {
